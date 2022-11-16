@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+
+message CompareAndSwapRequest{
+    int32 slot = 1;
+    int32 leader = 2;
+}
+
+message CompareAndSwapReply{
+  int32 leader = 1;
+}
+
+
+service BoneyService{
+    rpc compareAndSwap(CompareAndSwapRequest) returns (CompareAndSwapReply);
+}
+

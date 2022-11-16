@@ -1,0 +1,2 @@
+obj\Debug\net6.0\protos/BoneyService.cs \
+obj\Debug\net6.0\protos/BoneyServiceGrpc.cs: protos/BoneyService.proto

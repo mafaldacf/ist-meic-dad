@@ -1,0 +1,55 @@
+syntax = "proto3";
+
+message ProposeRequest{
+  int32 leader = 1;
+  int32 write_ts = 2;
+  int32 slot = 3;
+}
+
+message PromiseReply{
+  Status status = 1;
+  int32 slot = 2;
+
+}
+
+message PrepareRequest{
+  int32 read_ts = 1;
+  int32 slot = 2;
+
+}
+
+message PrepareReply{
+  int32 write_ts = 1;
+  int32 leader = 2;
+  Status status =3;
+  int32 slot = 4;
+
+
+}
+
+enum Status{
+  OK = 0;
+  KILL = 1;
+  NOT_FOUND = 2;
+  FROZEN = 3;
+}
+
+message CommitRequest{
+  int32 write_ts = 1;
+  int32 value = 2;
+  int32 slot = 3;
+
+
+}
+
+message CommitReply{
+  Status status = 1;
+  int32 slot = 3;
+
+
+}
+service PaxosService{
+  rpc read(PrepareRequest) returns (PrepareReply);
+  rpc propose(ProposeRequest) returns (PromiseReply);
+  rpc commit(CommitRequest) returns (CommitReply);
+}

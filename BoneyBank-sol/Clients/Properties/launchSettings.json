@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Clients": {
+      "commandName": "Project",
+      "commandLineArgs": "configuration_sample.txt 7"
+    }
+  }
+}

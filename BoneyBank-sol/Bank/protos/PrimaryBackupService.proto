@@ -1,0 +1,67 @@
+syntax = "proto3";
+
+service PrimaryBackupService {
+    rpc Tentative (TentativeRequest) returns (AcknowledgeReply);
+    rpc Commit (CommitRequest) returns (CommitReply);
+    rpc RecoverState (RecoverStateRequest) returns (RecoverStateReply);
+    rpc ListPendingRequests (ListPendingRequestsRequest) returns (ListPendingRequestsReply);
+}
+
+message TentativeRequest {
+    int64 sequenceNumber = 1;
+    int32 slot = 2;
+    int32 leader = 3;
+    repeated int64 commandId = 4;
+}
+
+message AcknowledgeReply {
+    bool acknowledge = 1;
+}
+
+message RecoveredCommit {
+    int64 sequenceNumber = 1;
+    repeated int64 id = 2;
+    int32 type = 3;
+    float value = 4;
+}
+
+message RecoverStateRequest {
+    int64 lastSequenceNumber = 1;
+}
+
+message RecoverStateReply {
+    repeated RecoveredCommit RecoveredCommit = 1;
+}
+
+
+message CommitRequest {
+    int64 sequenceNumber = 1;
+    int32 slot = 2;
+    int32 leader = 3;
+}
+
+message CommitReply {
+    bool acknowledge = 1;
+}
+
+/*
+* Cleanup procedure
+*/ 
+
+
+message CollectedRequest {
+    int64 sequenceNumber = 1;
+    repeated int64 id = 2;
+}
+
+message ListPendingRequestsRequest {
+    int64 lastKnownSequenceNumber = 1;
+    int32 slot = 2;
+    int32 leader = 3;
+}
+
+message ListPendingRequestsReply {
+    repeated CollectedRequest commitedCommands = 1;
+    repeated CollectedRequest tentativeCommands = 2;
+    int64 lastSequenceNumber = 3;
+}

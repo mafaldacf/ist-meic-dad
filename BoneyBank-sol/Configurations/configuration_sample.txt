@@ -1,0 +1,18 @@
+P 1 boney http://localhost:10000
+P 2 boney http://localhost:10002
+P 3 boney http://localhost:10003
+P 4 bank http://localhost:10004
+P 5 bank http://localhost:10008
+P 6 bank http://localhost:10009
+P 7 bank http://localhost:10010
+P 8 bank http://localhost:10011
+P 9 client client_script_4.txt
+P 10 client client_script_4.txt
+P 11 client client_script_4.txt
+S 4
+T 20:44:50
+D 10000 
+F 1 (1, N, NS) (2, N, NS) (3, N, NS) (4, F, S) (5, N, NS) (6, N, NS) (7, N, NS) (8, F, NS)
+F 2 (1, N, NS) (2, N, NS) (3, N, NS) (4, N, NS) (5, F, S) (6, F, S) (7, N, NS) (8, N, NS)
+F 3 (1, N, NS) (2, N, NS) (3, N, NS) (4, F, S) (5, N, NS) (6, N, NS) (7, N, NS) (8, F, NS)
+F 4 (1, N, NS) (2, N, NS) (3, N, NS) (4, F, S) (5, N, NS) (6, N, NS) (7, F, S) (8, N, NS)

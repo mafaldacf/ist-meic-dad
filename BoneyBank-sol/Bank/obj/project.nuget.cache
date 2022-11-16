@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "dgSpecHash": "d+PwuoyowS9nc4KYOwqr6MYQ+/tk99ycvVSSYoCz2erW4LJDT+0cOZ/mAWOTalTuXR9rPm0uPHyspUph4UsY+g==",
+  "success": true,
+  "projectFilePath": "C:\\workspace\\DAD\\BoneyBank-sol\\Bank\\Bank.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\mafal\\.nuget\\packages\\google.protobuf\\3.21.6\\google.protobuf.3.21.6.nupkg.sha512",
+    "C:\\Users\\mafal\\.nuget\\packages\\grpc.core\\2.46.5\\grpc.core.2.46.5.nupkg.sha512",
+    "C:\\Users\\mafal\\.nuget\\packages\\grpc.core.api\\2.49.0\\grpc.core.api.2.49.0.nupkg.sha512",
+    "C:\\Users\\mafal\\.nuget\\packages\\grpc.net.client\\2.49.0\\grpc.net.client.2.49.0.nupkg.sha512",
+    "C:\\Users\\mafal\\.nuget\\packages\\grpc.net.common\\2.49.0\\grpc.net.common.2.49.0.nupkg.sha512",
+    "C:\\Users\\mafal\\.nuget\\packages\\grpc.tools\\2.49.1\\grpc.tools.2.49.1.nupkg.sha512",
+    "C:\\Users\\mafal\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\3.0.3\\microsoft.extensions.logging.abstractions.3.0.3.nupkg.sha512",
+    "C:\\Users\\mafal\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512"
+  ],
+  "logs": []
+}

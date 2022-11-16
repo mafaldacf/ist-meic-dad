@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net6.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<EnableWindowsTargeting>true</EnableWindowsTargeting>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Remove="protos\BankServer.proto" />
+		<None Remove="protos\BoneyService.proto" />
+		<None Remove="protos\PrimaryBackupService.proto" />
+	</ItemGroup>
+
+
+	<ItemGroup>
+		<PackageReference Include="Grpc.Tools" Version="2.49.1">
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+			<PrivateAssets>all</PrivateAssets>
+		</PackageReference>
+		<PackageReference Include="Grpc.Net.Client" Version="2.49.0" />
+		<PackageReference Include="Grpc.Core" Version="2.46.5" />
+		<PackageReference Include="Google.Protobuf" Version="3.21.6" />
+		<Protobuf Include="protos\PrimaryBackupService.proto" GrpcServices="Both" />
+		<Protobuf Include="protos\BankServer.proto" GrpcServices="Server" />
+		<Protobuf Include="protos\BoneyService.proto" GrpcServices="Client" />
+	</ItemGroup>
+
+</Project>

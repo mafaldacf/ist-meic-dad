@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+service BankServerService {
+    rpc ReadBalance (ReadBalanceRequest) returns (ReadBalanceReply);
+    rpc Deposit (DepositRequest) returns (DepositReply);
+    rpc Withdrawal (WithdrawalRequest) returns (WithdrawalReply);
+}
+
+enum ServerInfo{
+  PRIMARY = 0;
+  BACKUP = 1;
+}
+
+message ReadBalanceRequest {
+    ClientCredentials credentials = 1;
+}
+
+message ReadBalanceReply {
+    float balance = 1;
+    ServerInfo serverInfo = 2;
+}
+
+message DepositRequest {
+    float value = 1;
+    ClientCredentials credentials = 2;
+}
+
+message DepositReply {
+    float balance = 1;
+    ServerInfo serverInfo = 2;
+}
+
+message WithdrawalRequest {
+    float value = 1;
+    ClientCredentials credentials = 2;
+}
+
+message WithdrawalReply {
+    float value = 1;
+    float balance = 2;
+    ServerInfo serverInfo = 3;
+}
+
+message ClientCredentials {
+    int32 id = 1;
+    int64 sequenceNumber = 2;
+}
